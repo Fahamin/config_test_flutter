@@ -39,8 +39,15 @@ dependencies:
   riverpod: ^2.3.6
   firebase_core: ^2.2.0
   firebase_database: ^10.0.0
+  hive: ^2.2.3
+  m3u_parser_nullsafe: ^1.0.3
+  http: ^0.13.6
   provider: ^6.0.3
   shared_preferences: ^2.0.15
+  hive_flutter: ^1.1.0
+  sqflite: ^2.2.8+3
+  flutter_riverpod: ^2.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -2,6 +2,7 @@ import 'package:config_test_flutter/pages/homePage.dart';
 import 'package:get/get.dart';
 
 import '../pages/m3u/m3u_Page.dart';
+import '../pages/playlist/playlistpage.dart';
 
 class Routes {
   static String homePage = '/homepage';
@@ -10,7 +11,7 @@ class Routes {
 
   static String m3uPage = '/m3uPage';
 
-  static String loginWithUserID = '/loginWithUserID';
+  static String playlist = '/playlist';
 
   static String createAccount = '/createAccount';
 
@@ -37,4 +38,10 @@ appRoutes() => [
         transition: Transition.leftToRightWithFade,
         transitionDuration: Duration(milliseconds: 500),
       ),
+  GetPage(
+    name: Routes.playlist,
+    page: () => PlaylistPage(),
+    transition: Transition.leftToRightWithFade,
+    transitionDuration: Duration(milliseconds: 500),
+  ),
     ];

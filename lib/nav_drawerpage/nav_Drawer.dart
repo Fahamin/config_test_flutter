@@ -61,7 +61,7 @@ class NavDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   Get.back();
-                  Get.off("");
+                  Get.toNamed(Routes.playlist);
                 },
               ),
               Divider(

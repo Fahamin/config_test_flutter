@@ -1,15 +1,23 @@
+import 'dart:io';
+
 import 'package:config_test_flutter/RouteManage/routesall.dart';
 import 'package:config_test_flutter/pages/homePage.dart';
 import 'package:config_test_flutter/theme%20check/model_them.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
-  runApp(MyApp());
+  await Hive.initFlutter();
+  // await Hive.deleteBoxFromDisk('shopping_box');
+  await Hive.openBox('testBox');
+
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {

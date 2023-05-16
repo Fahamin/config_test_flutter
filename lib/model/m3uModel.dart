@@ -1,18 +1,25 @@
 import 'package:firebase_database/firebase_database.dart';
 
-class User{
-
+class DataModel {
   var name;
   var link;
 
-  User({
+  DataModel({
     this.name,
     this.link,
   });
 
-  User.fromSnapshot(DataSnapshot snapshot){
-    link = snapshot.value??['link'] ?? 'link';
-    name = snapshot.value??['name'] ?? 'name';
+  DataModel.fromSnapshot(DataSnapshot snapshot) {
+    Map<String, dynamic> myData =
+        Map<String, dynamic>.from(snapshot.value as Map);
+    name = myData["name"].toString() ?? '';
+    link = myData["link"].toString() ?? '';
+  }
 
+  Map<String, dynamic> toJson() {
+    return {
+      "name": name,
+      "link": link,
+    };
   }
 }
